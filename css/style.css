@@ -23,6 +23,7 @@ a:visited {
 }
 
 input {
+    min-width: 0;
     border: 0;
     font-family: inherit;
 }
@@ -30,6 +31,7 @@ input {
 button {
     font: inherit;
     color: inherit;
+    border: none;
     background: transparent;
 }
 
@@ -41,10 +43,9 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1510px;
+    max-width: 1500px;
 
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-inline: 50px;
     margin: auto;
 }
 
@@ -77,11 +78,11 @@ header .container {
 .nav-menu a {
     display: block;
 
-    padding: 2.875rem 1.25rem 2.875rem 1.25rem;
+    padding: 2.875rem 1.25rem;
     border-top: solid 2px rgba(0, 0, 0, 0);
 }
 
-.nav-menu a:hover{
+.nav-menu a:hover {
     color: #0065FC;
     border-top: solid 2px;
 }
@@ -117,9 +118,9 @@ header .container {
     color: #000000;
 }
 
-.research-function input[type="submit"] {
+.research-function button {
     background-color: #0065FC;
-    padding: 0.875rem 1rem 0.875rem 1rem;
+    padding: 0.875rem 1rem;
     border-radius: 0 1rem 1rem 0;
 
     font-size: 1.125rem;
@@ -127,14 +128,20 @@ header .container {
     color: #FFFFFF;
 }
 
+.research-function button i {
+    display: none;
+}
+
 /* FILTERS */
 
 .filters {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+
     font-weight: 700;
     align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 2.5rem;
+    padding-block: 2rem 2.5rem;
 }
 
 .filters p {
@@ -150,7 +157,7 @@ header .container {
     border-radius: 1.563rem;
 
     font-size: 1.063rem;
-    padding: 0.813rem 1.188rem 0.813rem 1.188rem;
+    padding: 0.813rem 1.188rem;
     margin-right: 2rem;
     
 }
@@ -181,6 +188,7 @@ header .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 
     height: 1.5rem;
     width: 1.5rem;
@@ -376,13 +384,13 @@ header .container {
     margin-bottom: 3.782rem;
 }
 
+#activities h2 {
+    margin-bottom: 1.154rem;
+}
+
 .activities-cards {
     display: flex;
     gap: 2.688rem;
-}
-
-#activities h2 {
-    margin-bottom: 1.154rem;
 }
 
 /* ACTIVTIES IN MARSEILLE CARD */
@@ -407,7 +415,7 @@ header .container {
 .activities-card h3 {
     font-size: 1rem;
     font-weight: 700;
-    padding: 1.25rem 2.25rem 1.313rem 1.888rem;
+    padding: 1.25rem 1.188rem 1.313rem 1.188rem;
 }
 
 /* FOOTER */
@@ -438,7 +446,18 @@ header .container {
 
 @media  screen and (max-width: 992px) {
 
+    /* BODY */
+
+    .container {
+        padding-inline: 72px;
+    }
+
+
     /* RESEARCH SECTION */
+
+    .research h1 {
+        margin-bottom: 0.813rem;
+    }
 
     .filters p {
         margin-right: 1.063rem;
@@ -517,4 +536,173 @@ header .container {
 
 @media  screen and (max-width: 768px) {
     
+    /* BODY */
+
+    .container {
+        padding-inline: 20px;
+    }
+    
+    /* HEADER */
+
+    header .container {
+        flex-direction: column;
+        padding: 0;
+
+        margin-bottom: 1.938rem;
+    }
+
+    .logo img {
+        margin-top: 1.313rem;
+    }
+
+    nav {
+        width: 100%;
+
+        margin-top: 1.563rem;
+    }
+
+    .nav-menu li {
+        width: 50%;
+        margin-left: 0;
+    }
+
+    .nav-menu a {
+        text-align: center;
+        padding: 1.438rem 1.938rem;
+        border-top: 0;
+        border-bottom: solid 3px #F2F2F2;
+    }
+
+    .nav-menu a:hover {
+        border-top: 0;
+        border-bottom: solid 3px;
+    }
+
+    /* RESEARCH */
+
+    .research-function {
+        margin-top: 2.25rem;
+    }
+
+    .research-function button i {
+        display: initial;
+    }
+
+    .research-function button span {
+        display: none;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+        gap: 1.063rem 0.938rem;
+    }
+
+    .filters p {
+        width: 100%;
+    }
+
+    .filter-button {
+        font-size: 0.688rem;
+        width: calc((100% - 0.938rem) / 2);
+        padding-inline: 0.813rem;
+
+        margin-right: 0;
+    }
+
+    .filter-button i {
+        margin-right: 0.313rem;
+    }
+
+    /* ACCOMMODATIONS IN MARSEILLE & MOST POPULAR SECTION */
+
+    .accommodations-most-popular {
+        margin-bottom: 5.563rem;
+    }
+    
+    .accommodations-most-popular .container {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+
+    /* MOST POPULAR SECTION */
+
+    .most-popular {
+        padding: 1.75rem 1.25rem 2.938rem 1.25rem;
+        border-radius: 0;
+    }
+    
+    .most-popular-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+    } 
+
+    .most-popular-card {
+        width: 100%;
+    }
+
+    /* ACCOMMODATIONS IN MARSEILLE SECTION */
+
+    #accommodations {
+        background-color: #FFFFFF;
+        border-radius: 0;
+        padding: 1.625rem 1.25rem;
+
+        margin-bottom: 0;
+    }
+
+    #accommodations p a {
+        display: none;
+    }
+
+    .accommodations-cards {
+        flex-direction: column;
+        gap: 0.75rem;
+
+        margin-bottom: 0;
+    }
+
+    .accommodation-card {
+        width: 100%;
+    }
+
+    /* ACTIVITIES IN MARSEILLE SECTION */
+
+    #activities {
+        margin-bottom: 5rem;
+    }
+
+    #activities h2 {
+        margin-bottom: 1.5rem;
+    }
+
+    .activities-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .activities-card {
+        width: 100%;
+    }
+
+    .activities-card img {
+        height: 8.375rem;
+    }
+
+    /* FOOTER */
+
+    footer .container {
+        padding: 0;
+    }
+
+    .inner-footer {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2.813rem 1.25rem 3.813rem 1.25rem;
+    }
+
+    .footer-nav {
+        margin: 0;
+        margin-left: 0.625rem;
+    }
 }
