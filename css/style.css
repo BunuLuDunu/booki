@@ -1,5 +1,4 @@
-/* RESET CSS */
-
+/* RESET CSS pour effacer tous les styles prédéfinis*/
 * {
     padding: 0;
     margin: 0;
@@ -41,7 +40,8 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
-.container {
+.container { 
+    /* Pour garder la max-width à 1400px + padding */
     width: 100%;
     max-width: 1500px;
 
@@ -79,6 +79,7 @@ header .container {
     display: block;
 
     padding: 2.875rem 1.25rem;
+    /* La bordure est invisible pour éviter le sursaut d'1 px au survol */
     border-top: solid 2px rgba(0, 0, 0, 0);
 }
 
@@ -87,7 +88,7 @@ header .container {
     border-top: solid 2px;
 }
 
-/* RESEARCH */
+/* SECTION RECHERCHE */
 
 .research h1 {
     font-size: 1.375rem;
@@ -118,6 +119,11 @@ header .container {
     color: #000000;
 }
 
+::placeholder {
+    /*Remplace la couleur du texte en placeholder pour un meilleur contraste*/
+    color: #000000 
+}
+
 .research-function button {
     background-color: #0065FC;
     padding: 0.875rem 1rem;
@@ -129,13 +135,15 @@ header .container {
 }
 
 .research-function button i {
+    /* Ne s'affiche pas avant le breakpoint mobile */
     display: none;
 }
 
-/* FILTERS */
+/* BOUTONS FILTRES */
 
 .filters {
     display: flex;
+    /* Le dernier bouton peut passer en dessous pour les petits écrans avant le breakpoint mobile */
     flex-wrap: wrap;
     row-gap: 1rem;
 
@@ -163,6 +171,7 @@ header .container {
 }
 
 .filter-button:last-child {
+    /* Retire la marge à droite pour le dernier bouton */
     margin-right: 0;
 }
 
@@ -176,7 +185,7 @@ header .container {
     background-color: #DEEBFF;
 }
 
-/* RESEARCH INFO */
+/* INFO RECHERCHE */
 
 .research .info {
     display: flex;
@@ -188,6 +197,7 @@ header .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Interdit à l'élément d'aller en dessous de sa largeur définie (width : 1,5rem) */
     flex-shrink: 0;
 
     height: 1.5rem;
@@ -199,7 +209,7 @@ header .container {
     margin-right: 0.688rem;
 }
 
-/* ACCOMMODATIONS IN MARSEILLE & MOST POPULAR SECTIONS */
+/* SECTION HEBERGEMENTS A MARSEILLE & LES PLUS POPULAIRES */
 
 .accommodations-most-popular {
     margin-bottom: 3.75rem;
@@ -209,13 +219,14 @@ header .container {
     display: flex;
 }
 
-/* ACCOMMODATIONS IN MARSEILLE SECTION */
+/* BLOC HEBERGEMENTS A MARSEILLE */
 
 #accommodations {
     background-color: #F2F2F2;
     border-radius: 1.25rem;
     padding: 2.625rem 2.5rem;
-
+    /* Calcul pour la dimension de la section "Hébergements" : 
+    100% de la largeur du container - la marge / le nombre de colonnes */
     width: calc((100% - 2.5rem) / (3 / 2));
     margin-right: 2.5rem;
 }
@@ -232,10 +243,12 @@ header .container {
     margin-bottom: 1.438rem;
 }
 
-/* ACCOMMODATION CARD */
+/* CARTE HEBERGEMENT A MARSEILLE */
 
 .accommodation-card {
     display: flex;
+    /*  Calcul pour la taille des cartes "Hébergements à Marseille": 
+    100% de la largeur - la taille de la marge * le nombre de marges par rangées / le nombre de cartes par rangées*/
     width: calc((100% - 1.875rem * 2) / 3);
     border-radius: 1.25rem;
 
@@ -250,21 +263,23 @@ header .container {
     width: 100%;
 }
 
-/* ACCOMMODATION CARD IMAGE */
+/* IMAGE CARTE HEBERGEMENT A MARSEILLE */
 
 .accommodation-card img {
     width: 100%;
-    height: 7.75rem;
+    /* ratio : largeur / hauteur de l'image*/
+    aspect-ratio: 246 / 124;
     border: solid 5px #FFFFFF;
     border-radius: 1.25rem 1.25rem 0 0;
     object-fit: cover;
 }
 
-/* ACCOMMODATION CARD DESCRIPTION */
+/* DESCRIPTION CARTE HEBERGEMENT A MARSEILLE */
 
 .card-info {
     display: flex;
     flex-direction: column;
+    /* Autorise la description à prendre l'espace disponible */
     flex-grow: 1;
 
     padding: 0.25rem 1rem 0.688rem 1rem;
@@ -281,13 +296,13 @@ header .container {
     margin-bottom: 0.563rem;
 }
 
-/* STARS RATING */
+/* ETOILES RATING */
 
 .rating {
     display: flex;
     color: #0065FC;
     font-size: 0.75rem;
-
+    /* Pour pousser le rating en bas de la carte */
     margin-top: auto;
 }
 
@@ -297,17 +312,18 @@ header .container {
 }
 
 .rating .empty {
-    color: #D9D9D9;
+    /* La dernière étoile ne prend pas la couleur bleue */
+    color: #D9D9D9; 
 }
 
-/* LOAD MORE */
+/* AFFICHER PLUS */
 
 #accommodations p a {
     font-size: 1.125rem;
     font-weight: 700;
 }
 
-/* MOST POPULAR SECTION */
+/* BLOC LES PLUS POPULAIRES */
 
 
 .most-popular {
@@ -315,6 +331,8 @@ header .container {
     border-radius: 1.25rem;
     padding: 2.563rem 2.5rem 2.125rem 2.313rem;
 
+    /* Calcul pour la dimension de la section "Les plus populaires":
+    100% de la largeur - la marge / le nombre de cartes */
     width: calc((100% - 2.5rem) / 3 )
 }
 
@@ -330,7 +348,7 @@ header .container {
     color: #0065FC;
 }
 
-/* MOST POPULAR CARD */
+/* CARTE LES PLUS POPULAIRES */
 
 .most-popular-card {
     border-radius: 1.25rem;
@@ -348,37 +366,24 @@ header .container {
     display: flex;
 }
 
-/* MOST POPULAR CARD IMAGE */
-
-.most-popular-img {
-    width: 40%;
-    position: relative;
-    min-height: 9rem;
-    flex-shrink: 0;
-}
+/* IMAGE CARTE LES PLUS POPULAIRES */
 
 .most-popular-card img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 40%;
+    aspect-ratio: 137 / 144;
     border: solid 5px #FFFFFF;
     border-radius: 1.25rem 0 0 1.25rem;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
-/* MOST POPULAR CARD INFO */
+/* DESCRIPTION CARTE LES PLUS POPULAIRES */
 
 .most-popular-card .card-info {
-    display: flex;
-    flex-direction: column;
     padding: 1rem 1.375rem 0.75rem 0.938rem;
 }
 
-.most-popular-card .rating {
-    margin-top: auto;
-}
-
-/* ACTIVITIES IN MARSEILLE SECTION */
+/* SECTION ACTIVITES A MARSEILLE */
 
 #activities {
     margin-bottom: 3.782rem;
@@ -393,24 +398,26 @@ header .container {
     gap: 2.688rem;
 }
 
-/* ACTIVTIES IN MARSEILLE CARD */
+/* CARTE ACTIVITES A MARSEILLE */
 
 .activities-card {
+    /* Calcul pour la dimension des cartes "Activités à Marseille": 
+    100% de la largeur - la marge * le nombre de marges par rangées / le nombre de cartes par rangées */
     width: calc((100% - 2.688rem * 3) / 4);
     border-radius: 1.25rem;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ACTIVITIES IN MARSEILLE CARD IMAGE */
+/* IMAGE CARTE ACTIVITES A MARSEILLE */
 
 .activities-card img {
     width: 100%;
-    height: 24.313rem;
+    aspect-ratio: 302 / 389;
     border-radius: 1.25rem 1.25rem 0 0;
     object-fit: cover;
 }
 
-/* ACTIVITIES IN MARSEILLE CARD INFO */
+/* DESCRIPTION CARTE ACTIVITES A MARSEILLE */
 
 .activities-card h3 {
     font-size: 1rem;
@@ -420,7 +427,7 @@ header .container {
 
 /* FOOTER */
 
-.inner-footer {
+.footer-inner {
     display: flex;
     justify-content: space-around;
     background-color: #F2F2F2;
@@ -442,7 +449,7 @@ header .container {
     margin-bottom: 0.75rem;
 }
 
-/* RESPONSIVE TABLET */
+/* RESPONSIVE TABLETTE */
 
 @media  screen and (max-width: 992px) {
 
@@ -452,8 +459,7 @@ header .container {
         padding-inline: 72px;
     }
 
-
-    /* RESEARCH SECTION */
+    /* SECTION RECHERCHE */
 
     .research h1 {
         margin-bottom: 0.813rem;
@@ -471,7 +477,7 @@ header .container {
         flex-direction: column;
     }
 
-    /* ACCOMMODATIONS SECTION */
+    /* BLOC HEBERGEMENTS A MARSEILLE */
 
     #accommodations {
         width: 100%;
@@ -479,7 +485,7 @@ header .container {
         margin-bottom: 3.313rem;
     }
 
-    /* MOST POPULAR SECTION */
+    /* BLOC LES PLUS POPULAIRES */
 
     .most-popular {
         width: 100%;
@@ -509,7 +515,7 @@ header .container {
         font-size: 0.813rem;
     }
 
-    /* ACTVITIES SECTION */
+    /* SECTION ACTIVITES A MARSEILLE */
 
     #activities {
         margin-bottom: 4.313rem;
@@ -528,7 +534,7 @@ header .container {
     }
 
     .activities-card img {
-        height: 13.188rem;
+        aspect-ratio: 182 / 211;
     }
 }
 
@@ -578,7 +584,7 @@ header .container {
         border-bottom: solid 3px;
     }
 
-    /* RESEARCH */
+    /* SECTION RECHERCHE */
 
     .research-function {
         margin-top: 2.25rem;
@@ -593,7 +599,6 @@ header .container {
     }
 
     .filters {
-        flex-wrap: wrap;
         gap: 1.063rem 0.938rem;
     }
 
@@ -603,7 +608,9 @@ header .container {
 
     .filter-button {
         font-size: 0.688rem;
-        width: calc((100% - 0.938rem) / 2);
+        /* Calcul pour positionner les boutons par 2: 
+        100% de la largeur - la marge / le nombre de bouton par rangées */
+        width: calc((100% - 0.938rem) / 2); 
         padding-inline: 0.813rem;
 
         margin-right: 0;
@@ -613,7 +620,7 @@ header .container {
         margin-right: 0.313rem;
     }
 
-    /* ACCOMMODATIONS IN MARSEILLE & MOST POPULAR SECTION */
+    /* SECTION HEBERGEMENTS A MARSEILLE ET LES PLUS POPULAIRES */
 
     .accommodations-most-popular {
         margin-bottom: 5.563rem;
@@ -624,7 +631,7 @@ header .container {
         padding: 0;
     }
 
-    /* MOST POPULAR SECTION */
+    /* BLOC LES PLUS POPULAIRES */
 
     .most-popular {
         padding: 1.75rem 1.25rem 2.938rem 1.25rem;
@@ -641,7 +648,11 @@ header .container {
         width: 100%;
     }
 
-    /* ACCOMMODATIONS IN MARSEILLE SECTION */
+    .most-popular-card img {
+        aspect-ratio: 106 / 144;
+    }
+
+    /* BLOC HEBERGEMENTS A MARSEILLE */
 
     #accommodations {
         background-color: #FFFFFF;
@@ -652,7 +663,8 @@ header .container {
     }
 
     #accommodations p a {
-        display: none;
+        /* Le lien "Afficher Plus" n'apparait pas */
+        display: none; 
     }
 
     .accommodations-cards {
@@ -666,7 +678,11 @@ header .container {
         width: 100%;
     }
 
-    /* ACTIVITIES IN MARSEILLE SECTION */
+    .accommodation-card img {
+        aspect-ratio: 335 / 124;
+    }
+
+    /* SECTION ACTIVITES A MARSEILLE */
 
     #activities {
         margin-bottom: 5rem;
@@ -686,7 +702,7 @@ header .container {
     }
 
     .activities-card img {
-        height: 8.375rem;
+        aspect-ratio: 334 / 134;
     }
 
     /* FOOTER */
@@ -695,7 +711,7 @@ header .container {
         padding: 0;
     }
 
-    .inner-footer {
+    .footer-inner {
         flex-direction: column;
         gap: 2.5rem;
         padding: 2.813rem 1.25rem 3.813rem 1.25rem;
