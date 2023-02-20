@@ -101,7 +101,7 @@ header .container {
     margin-top: 1.25rem;
 }
 
-.location-icon {
+.research-function .geolocation {
     background-color: #F2F2F2;
     padding: 1rem 1.125rem 1rem 1.125rem;
     border-radius: 1rem 0 0 1rem;
@@ -124,7 +124,7 @@ header .container {
     color: #000000 
 }
 
-.research-function button {
+.research-function .submit-button {
     background-color: #0065FC;
     padding: 0.875rem 1rem;
     border-radius: 0 1rem 1rem 0;
@@ -134,7 +134,7 @@ header .container {
     color: #FFFFFF;
 }
 
-.research-function button i {
+.research-function .submit-button i {
     /* Ne s'affiche pas avant le breakpoint mobile */
     display: none;
 }
@@ -590,11 +590,11 @@ header .container {
         margin-top: 2.25rem;
     }
 
-    .research-function button i {
+    .research-function .submit-button i {
         display: initial;
     }
 
-    .research-function button span {
+    .research-function .submit-button span {
         display: none;
     }
 
