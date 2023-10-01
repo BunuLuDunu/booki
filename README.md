@@ -20,9 +20,9 @@ cd booki
 npm install
 ```
 
-![Desktop](images\readme\bunuludunu.github.io_booki_.png)
+![Desktop](/images/readme/bunuludunu.github.io_booki_.png)
 
-![Mobile](images\readme\bunuludunu.github.io_booki_ 2.png)
+![Mobile](/images/readme/bunuludunu.github.io_booki_%202.png)
 
 
 ## 🙇 Commentaires de soutenance :
