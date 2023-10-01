@@ -22,8 +22,6 @@ npm install
 
 ![Desktop](/images/readme/bunuludunu.github.io_booki_.png)
 
-![Mobile](/images/readme/bunuludunu.github.io_booki_%202.png)
-
 
 ## 🙇 Commentaires de soutenance :
 - L’étudiante a installé Visual Studio Code pour developper l'application.
